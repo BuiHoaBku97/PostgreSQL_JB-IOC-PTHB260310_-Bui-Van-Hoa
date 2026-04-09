@@ -32,7 +32,7 @@ from customer c
 join booking b on c.customer_id = b.customer_id
 join room r on b.room_id = r.room_id;
 
---8. Thong tin khach hang, tong so tien moi khach hang da thanh toan
+--8. Thong tin khach hang, tong so tien moi khach hang da thanh toan theo tung phuong thuc thanh toan
 select 
 	c.customer_id,
 	c.customer_full_name,
@@ -75,7 +75,7 @@ group by r.room_id
 having count(distinct b.customer_id) >= 3 -- tinh so khach hang cua moi phong
 	   and sum(p.payment_amount) < 1000;
 
---12. Khach hang co tong so tien da thanh toan (sum(nhieu lan booking) > 1000)
+--12. Khach hang co tong so tien da thanh toan (tong chung cho tat ca cac phong) hon 1000
 select 
     c.customer_id,
     c.customer_full_name,
